@@ -31,7 +31,7 @@ pipeline {
     }
     stage('Snapshot Site') {
       when {
-        branch 'develop'
+        branch '1.3.develop'
       }
       steps {
         sh 'mvn -B site-deploy'
@@ -39,7 +39,7 @@ pipeline {
     }
     stage('Release Site') {
       when {
-        branch 'master'
+        branch '1.3.master'
       }
       steps {
         sh 'mvn -B -P gh-pages-site site site:stage scm-publish:publish-scm'
