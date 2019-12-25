@@ -10,6 +10,4 @@ This library contains
 
 #### Maven Site
 
-- [Release](https://bremersee.github.io/common-base/index.html)
-
-- [Snapshot](https://nexus.bremersee.org/repository/maven-sites/common-base/1.3.4-SNAPSHOT/index.html)
+- [Documentation](https://nexus.bremersee.org/repository/maven-sites/common-base/1.3.4-SNAPSHOT/index.html)

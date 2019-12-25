@@ -29,20 +29,15 @@ pipeline {
         sh 'mvn -B -P deploy clean deploy'
       }
     }
-    stage('Snapshot Site') {
+    stage('Site') {
       when {
-        branch '1.3.develop'
+        anyOf {
+          branch '1.3.develop'
+          branch '1.3.master'
+        }
       }
       steps {
         sh 'mvn -B site-deploy'
-      }
-    }
-    stage('Release Site') {
-      when {
-        branch '1.3.master'
-      }
-      steps {
-        sh 'mvn -B -P gh-pages-site site site:stage scm-publish:publish-scm'
       }
     }
   }
